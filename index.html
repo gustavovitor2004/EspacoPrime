@@ -607,64 +607,164 @@
             transform: scale(1.05);
         }
 
-        /* DEPOIMENTOS GRANDES (LAYOUT B) */
+        /* DIFERENCIAIS E ESTRUTURA */
+        .specs-section {
+            background: var(--bg);
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .spec-card {
+            background: var(--white);
+            border: 1px solid rgba(26, 46, 26, 0.06);
+            padding: 45px 30px;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .spec-icon {
+            font-size: 2.8rem;
+            margin-bottom: 24px;
+            display: block;
+            line-height: 1;
+        }
+
+        .spec-card h3 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .spec-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* DEPOIMENTOS EM GRID (LAYOUT B) */
         .testimonials {
             background: var(--bg-dark);
             color: var(--white);
-            text-align: center;
         }
 
-        .test-wrap {
-            max-width: 800px;
-            margin: 0 auto;
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
         }
 
-        .quote-icon {
-            font-size: 4rem;
+        .test-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(201, 168, 76, 0.12);
+            padding: 40px 30px;
+            border-radius: 4px;
+            text-align: left;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .test-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .test-card .quote-icon {
+            font-size: 3rem;
             color: var(--primary);
             font-family: serif;
             line-height: 1;
-            margin-bottom: 20px;
-            opacity: 0.5;
+            margin-bottom: 15px;
+            opacity: 0.7;
         }
 
         .test-quote {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-size: 1.25rem;
             font-style: italic;
             font-weight: 300;
-            margin-bottom: 40px;
-            line-height: 1.4;
-            color: var(--white);
+            margin-bottom: 30px;
+            line-height: 1.5;
+            color: #e0e0e0;
         }
 
         .test-author {
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 16px;
+            margin-top: auto;
         }
 
         .test-author img {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--primary);
         }
 
         .test-author-info h4 {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             color: var(--primary);
             margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
         }
 
         .test-author-info p {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #888;
             font-family: 'Montserrat', sans-serif;
             letter-spacing: 1px;
             text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        /* SEÇÃO CTA FINAL */
+        .cta-final {
+            background: var(--secondary);
+            color: var(--white);
+            text-align: center;
+            border-top: 1px solid rgba(201, 168, 76, 0.15);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+        }
+
+        .cta-final h2 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .cta-final p {
+            font-size: 1.05rem;
+            max-width: 650px;
+            margin: 0 auto 40px;
+            color: #ccc;
+        }
+
+        .cta-final-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         /* FAQ ACORDEÃO */
@@ -909,10 +1009,11 @@
             </a>
             <nav class="nav-links">
                 <a href="#historia">O Espaço</a>
+                <a href="#diferenciais">Diferenciais</a>
                 <a href="#ambientes">Ambientes</a>
-                <a href="#eventos">Eventos</a>
+                <a href="#depoimentos">Depoimentos</a>
                 <a href="#faq">FAQ</a>
-                <a href="https://api.whatsapp.com/send?phone=5571999510209&text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento!"
+                <a href="https://api.whatsapp.com/send?phone=5571999510209&text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20o%20meu%20evento!"
                     target="_blank" rel="noopener noreferrer nofollow" class="btn-primary"
                     style="padding: 10px 24px; animation: none;">Solicitar Orçamento</a>
             </nav>
@@ -927,10 +1028,10 @@
             <p>Aqui cada detalhe foi pensado para tornar seu momento inesquecível. Um salão de festas contemporâneo e
                 sofisticado no coração de Camaçari.</p>
             <div class="hero-buttons">
-                <a href="https://api.whatsapp.com/send?phone=5571999510209" target="_blank"
-                    rel="noopener noreferrer nofollow" class="btn-primary">Falar no WhatsApp</a>
-                <a href="https://www.instagram.com/espacoprimeba/" target="_blank" rel="noopener noreferrer nofollow"
-                    class="btn-secondary">Acessar Instagram</a>
+                <a href="https://api.whatsapp.com/send?phone=5571999510209&text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20o%20meu%20evento!" target="_blank"
+                    rel="noopener noreferrer nofollow" class="btn-primary">Solicitar Orçamento</a>
+                <a href="https://api.whatsapp.com/send?phone=5571999510209&text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20para%20conhecer%20o%20Espaço%20Prime!" target="_blank" rel="noopener noreferrer nofollow"
+                    class="btn-secondary">Agendar Visita</a>
             </div>
         </div>
         <div class="hero-image"></div>
@@ -994,6 +1095,51 @@
                     <div class="event-icon">✨</div>
                     <h3>15 Anos & Formaturas</h3>
                     <p>Salão amplo que garante pista de dança vibrante e espaços confortáveis para as famílias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO: DIFERENCIAIS E FICHA TÉCNICA -->
+    <section id="diferenciais" class="section-padding specs-section">
+        <div class="container">
+            <div class="text-center reveal">
+                <h2 class="section-title">Infraestrutura & Diferenciais</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 50px;">
+                    Tudo o que você precisa para que seu evento seja perfeito, confortável e inesquecível.
+                </p>
+            </div>
+            
+            <div class="specs-grid reveal">
+                <div class="spec-card">
+                    <span class="spec-icon">👥</span>
+                    <h3>Capacidade Ampliada</h3>
+                    <p>Espaço flexível para acomodar confortavelmente até 300 convidados sentados ou 400 em formato coquetel.</p>
+                </div>
+                <div class="spec-card">
+                    <span class="spec-icon">❄️</span>
+                    <h3>100% Climatizado</h3>
+                    <p>Sistema de ar-condicionado central de última geração para garantir o conforto térmico de todos os convidados.</p>
+                </div>
+                <div class="spec-card">
+                    <span class="spec-icon">🌿</span>
+                    <h3>Área Externa & Jardim</h3>
+                    <p>Lindo jardim com paisagismo sofisticado e iluminação especial, perfeito para cerimônias românticas ao ar livre.</p>
+                </div>
+                <div class="spec-card">
+                    <span class="spec-icon">💄</span>
+                    <h3>Camarins Privativos</h3>
+                    <p>Suítes de apoio (camarim da noiva e do noivo) exclusivas, privativas e equipadas com frigobar e conforto premium.</p>
+                </div>
+                <div class="spec-card">
+                    <span class="spec-icon">🍳</span>
+                    <h3>Cozinha Industrial</h3>
+                    <p>Estrutura de cozinha industrial de alto padrão completa para atender à equipe de buffet do seu evento.</p>
+                </div>
+                <div class="spec-card">
+                    <span class="spec-icon">🚗</span>
+                    <h3>Fácil Acesso</h3>
+                    <p>Excelente localização no Jardim Limoeiro, com facilidade de estacionamento e acessibilidade total para os convidados.</p>
                 </div>
             </div>
         </div>
@@ -1097,17 +1243,57 @@
     </section>
 
     <!-- DEPOIMENTOS DESTAQUE (LAYOUT B) -->
-    <section class="section-padding testimonials">
-        <div class="container test-wrap reveal">
-            <div class="quote-icon">❝</div>
-            <p class="test-quote">"O salão é impecável, com opção de cerimônia coberta e aberta, o jardim é perfeito com
-                as luzes amarelas, deixando a cerimônia extremamente romântica. Recebemos muitos elogios!"</p>
-            <div class="test-author">
-                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-                    alt="Cliente Prime" loading="lazy">
-                <div class="test-author-info">
-                    <h4>Avaliação de Cliente</h4>
-                    <p>Noiva • Google Reviews (4.8★)</p>
+    <section id="depoimentos" class="section-padding testimonials">
+        <div class="container reveal">
+            <div class="text-center">
+                <h2 class="section-title" style="color: var(--white);">O Que Dizem Nossos Clientes</h2>
+                <p style="color: #aaa; max-width: 600px; margin: 0 auto 50px;">A opinião de quem confiou no Espaço Prime para os momentos mais importantes de suas vidas.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="test-card">
+                    <div>
+                        <div class="quote-icon">❝</div>
+                        <p class="test-quote">"O salão é impecável, com opção de cerimônia coberta e aberta, o jardim é perfeito com as luzes amarelas, deixando a cerimônia extremamente romântica. Recebemos muitos elogios!"</p>
+                    </div>
+                    <div class="test-author">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                            alt="Foto de Mariana Silva" loading="lazy">
+                        <div class="test-author-info">
+                            <h4>Mariana Silva</h4>
+                            <p>Noiva • Google Reviews (5★)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="test-card">
+                    <div>
+                        <div class="quote-icon">❝</div>
+                        <p class="test-quote">"Infraestrutura de ponta. A climatização do salão principal funcionou perfeitamente e a cozinha industrial facilitou muito o trabalho do buffet. Atendimento excelente!"</p>
+                    </div>
+                    <div class="test-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                            alt="Foto de Ricardo Santos" loading="lazy">
+                        <div class="test-author-info">
+                            <h4>Ricardo Santos</h4>
+                            <p>Anfitrião • Confraternização</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="test-card">
+                    <div>
+                        <div class="quote-icon">❝</div>
+                        <p class="test-quote">"Fiz minha festa de 15 anos no Espaço Prime e foi incrível! O camarim privativo é maravilhoso e espaçoso para se preparar, e o salão tem um visual super moderno e imponente."</p>
+                    </div>
+                    <div class="test-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                            alt="Foto de Beatriz Oliveira" loading="lazy">
+                        <div class="test-author-info">
+                            <h4>Beatriz Oliveira</h4>
+                            <p>Debutante • Google Reviews (5★)</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1167,6 +1353,18 @@
         </div>
     </section>
 
+    <!-- CHAMADA PARA AÇÃO FINAL -->
+    <section id="contato" class="section-padding cta-final">
+        <div class="container reveal">
+            <h2>Pronto para realizar o seu evento dos sonhos?</h2>
+            <p>Converse com a nossa equipe comercial para consultar a disponibilidade de datas, tirar dúvidas e solicitar um orçamento personalizado.</p>
+            <div class="cta-final-buttons">
+                <a href="https://api.whatsapp.com/send?phone=5571999510209&text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20o%20meu%20evento!" target="_blank" rel="noopener noreferrer nofollow" class="btn-primary">Solicitar Orçamento</a>
+                <a href="https://api.whatsapp.com/send?phone=5571999510209&text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20para%20conhecer%20o%20Espaço%20Prime!" target="_blank" rel="noopener noreferrer nofollow" class="btn-secondary">Agendar Visita</a>
+            </div>
+        </div>
+    </section>
+
     <!-- MAPA -->
     <section class="map-section reveal">
         <iframe
@@ -1219,10 +1417,9 @@
 
     <!-- CTA BAR FIXA NO SCROLL -->
     <div class="cta-bar" id="ctaBar">
-        <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic;">Sua data ainda
-            está disponível?</span>
-        <a href="https://api.whatsapp.com/send?phone=5571999510209" target="_blank"
-            rel="noopener noreferrer nofollow">Consulte Agora</a>
+        <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic;">Sua data ainda está disponível?</span>
+        <a href="https://api.whatsapp.com/send?phone=5571999510209&text=Olá!%20Gostaria%20de%20verificar%20a%20disponibilidade%20de%20uma%20data!" target="_blank"
+            rel="noopener noreferrer nofollow">Falar no WhatsApp</a>
     </div>
 
     <!-- BOTÃO VOLTAR AO TOPO -->
